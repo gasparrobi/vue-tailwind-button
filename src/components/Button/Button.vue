@@ -32,13 +32,13 @@ export default {
   props: {
     size: {
       type: String,
-      default: SIZES.get(SIZE_MEDIUM).name,
+      default: SIZE_MEDIUM,
       validator: (value) => SIZES.has(value),
     },
 
     variant: {
       type: String,
-      default: VARIANTS.get(VARIANT_PRIMARY).name,
+      default: VARIANT_PRIMARY,
       validator: (value) => VARIANTS.has(value),
     },
 
@@ -65,11 +65,11 @@ export default {
 
   computed: {
     sizeClass() {
-      return SIZES.get(this.size).classes;
+      return SIZES.get(this.size);
     },
 
     variantClass() {
-      return VARIANTS.get(this.variant).classes;
+      return VARIANTS.get(this.variant);
     },
   },
 
